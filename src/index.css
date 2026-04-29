@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    --background: 216 64% 6%;
+    --foreground: 0 0% 100%;
+
+    --card: 216 64% 8%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 216 64% 8%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 48 100% 50%;
+    --primary-foreground: 216 64% 6%;
+
+    --secondary: 216 40% 15%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 216 30% 18%;
+    --muted-foreground: 210 20% 60%;
+
+    --accent: 200 80% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 216 30% 20%;
+    --input: 216 30% 20%;
+    --ring: 48 100% 50%;
+
+    --radius: 0.25rem;
+
+    --neon-blue: 200 100% 60%;
+    --neon-glow: 200 100% 70%;
+    --gold: 48 100% 50%;
+    --deep-navy: 216 64% 6%;
+
+    --font-display: 'Orbitron', monospace;
+    --font-body: 'Inter', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 8px hsl(var(--primary) / 0.4), 0 0 15px hsl(var(--primary) / 0.2);
+  }
+  .text-glow-blue {
+    text-shadow: 0 0 8px hsl(var(--neon-blue) / 0.4), 0 0 15px hsl(var(--neon-blue) / 0.2);
+  }
+  .neon-border {
+    box-shadow: 0 0 10px hsl(var(--primary) / 0.4), 0 0 20px hsl(var(--primary) / 0.2), inset 0 0 10px hsl(var(--primary) / 0.1);
+  }
+  .scanline {
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      hsl(var(--neon-blue) / 0.03) 2px,
+      hsl(var(--neon-blue) / 0.03) 4px
+    );
+  }
+}
